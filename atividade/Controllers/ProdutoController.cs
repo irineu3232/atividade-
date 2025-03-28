@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using atividade.Models;
+using System.ComponentModel.DataAnnotations;
 using atividade.Repositorio;
 
 
@@ -26,7 +27,7 @@ namespace atividade.Controllers
             if(ModelState.IsValid)
             {
                 _produtoRepositorio.AdicionarProduto(produto);
-                return RedirectToAction("Home");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

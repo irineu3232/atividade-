@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using atividade.Models;
+using System.ComponentModel.DataAnnotations;
 using atividade.Repositorio;
 
 namespace atividade.Controllers

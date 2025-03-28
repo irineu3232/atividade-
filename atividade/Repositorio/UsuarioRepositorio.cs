@@ -16,12 +16,12 @@ namespace atividade.Repositorio
         {
                 using (var db= new Conexao(_connectionString))
                 {
-                 var cmd = db.MySqlCommand();
-                cmd.CommandText = "INSERT INTO Usuarios (Nome, Email, Senha) VALUES (@Nome, @Email, @Senha ";
-                 cmd.Parameters.AddWithValue("@Nome", usuario.Nome);
-                 cmd.Parameters.AddWithValue("@Email", usuario.Email);
-                 cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
-                cmd.ExecuteNonQuery();
+                    var cmd = db.MySqlCommand();
+                    cmd.CommandText = "INSERT INTO Usuario (Nome, Email, Senha) VALUES (@Nome, @Email, @Senha ";
+                    cmd.Parameters.AddWithValue("@Nome", usuario.Nome);
+                    cmd.Parameters.AddWithValue("@Email", usuario.Email);
+                    cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
+                    
                 }
         }
 
@@ -32,7 +32,7 @@ namespace atividade.Repositorio
                 var cmd = db.MySqlCommand();
                 cmd.CommandText = "Select * From Usuario Where Email = @Email";
                 cmd.Parameters.AddWithValue("@Email", email);
-                cmd.ExecuteNonQuery();
+                
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -42,7 +42,8 @@ namespace atividade.Repositorio
                         {
                             Id = reader.GetInt32("Id"),
                             Nome = reader.GetString("Nome"),
-                            Email = reader.GetString("Senha"),
+                            Email = reader.GetString("Email"),
+                            Senha= reader.GetString("Senha"),
                         };
 
                     }
