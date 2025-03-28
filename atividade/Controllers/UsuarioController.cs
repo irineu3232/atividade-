@@ -4,11 +4,11 @@ using atividade.Repositorio;
 
 namespace atividade.Controllers
 {
-    public class UsuarioController1 : Controller
+    public class UsuarioController : Controller
     {
         private readonly UsuarioRepositorio _usuarioRepositorio;
 
-        public UsuarioController1(UsuarioRepositorio usuarioRepositorio)
+        public UsuarioController(UsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
@@ -27,6 +27,7 @@ namespace atividade.Controllers
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Email ou senhas invalidos");
+            return View();
         }
 
 

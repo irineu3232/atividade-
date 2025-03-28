@@ -28,6 +28,7 @@ namespace atividade.Controllers
                 _produtoRepositorio.AdicionarProduto(produto);
                 return RedirectToAction("Home");
             }
+            return View();
         }
 
     }
