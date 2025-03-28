@@ -6,6 +6,7 @@ namespace atividade.Repositorio
 {
     public class Conexao : IDisposable
     {
+
         private MySqlConnection _connection;
 
         public Conexao(string connectionString)
@@ -18,11 +19,14 @@ namespace atividade.Repositorio
         {
             return _connection.CreateCommand();
         }
-        
+
         public void Dispose()
         {
-            _connection.Close();
-            _connection.Dispose();
+            if (_connection != null && _connection.State == ConnectionState.Open)
+            {
+                _connection.Close();
+                _connection.Dispose();
+            }
         }
     }
 }

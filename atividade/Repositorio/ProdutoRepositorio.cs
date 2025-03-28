@@ -16,12 +16,14 @@ namespace atividade.Repositorio
             using (var db = new Conexao(_connectionString))
             {
                 var cmd = db.MySqlCommand();
-                cmd.CommandText = "Insert Into Produto ( Descricao, Preco) Values (@Descricao, @Preco)";
+                cmd.CommandText = "INSERT INTO Produto (Nome, Descricao, Preco) VALUES (@Nome,@Descricao,@Preco)";
+                cmd.Parameters.AddWithValue("@Nome", produto.Nome);
                 cmd.Parameters.AddWithValue("@Descricao", produto.Descricao);
                 cmd.Parameters.AddWithValue("@Preco", produto.Preco);
+                cmd.ExecuteNonQuery();
+
             }
         }
 
     }
-
 }
