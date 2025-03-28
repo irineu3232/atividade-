@@ -26,7 +26,7 @@ namespace atividade.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("", "Email ou senhas invalidos");
+            ModelState.AddModelError("", "Email ou senhas inválidos");
             return View();
         }
 
