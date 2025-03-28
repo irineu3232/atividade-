@@ -1,11 +1,9 @@
-using atividade.Repositorio;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<UsuarioRepositorio>();
-builder.Services.AddScoped<ProdutoRepositorio>();
+builder.Services.AddScoped<atividade.Repositorio.UsuarioRepositorio>();
+builder.Services.AddScoped<atividade.Repositorio.ProdutoRepositorio>();
 
 var app = builder.Build();
 

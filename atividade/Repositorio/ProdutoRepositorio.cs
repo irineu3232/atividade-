@@ -23,9 +23,6 @@ namespace atividade.Repositorio
             }
         }
 
-
-
-
     }
 
 }
