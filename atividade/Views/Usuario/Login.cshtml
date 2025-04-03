@@ -1,21 +1,22 @@
 ﻿@model atividade.Models.Usuario;
 @{
+    <link rel="stylesheet" href="~/css/Login.css" />
     ViewData["Title"] = "Login";
 }
 
-    <h1>Login</h1>
+    <h1 class="titulo">Login</h1>
     
     <form asp-action="Login" method="post">
-
-        <div>
+      <div class="form">
+        <div class="div">
         <label>Email:</label>
         <input type="email" name="email" required/>
         </div>
-        <div>
+        <div class="div separador">
             <label>Senha</label>
             <input type="password" name="senha" required />
         </div>
-        <button type="submit">Login</button>
-
+        <button type="submit" class="btt">Login</button>
+      </div>
     </form>
     

@@ -1,25 +1,26 @@
 ﻿@model atividade.Models.Usuario;
 @{
+    <link rel="stylesheet" href="~/css/CadastroUsuario.css" />
     ViewData["Title"] = "Cadastro";
 }
 
-<h2>Regisro</h2>
+<h2 class="titulo">Registro</h2>
 
 <form asp-action="Cadastro" method="post">
-    <div>
+   <div class="div">
         <label>Nome:</label>
         <input asp-for="Nome" required />
-    </div>
-    <div>
+   </div>
+    <div class="div">
         <label>Email:</label>
         <input asp-for="Email" type="email" required />
     </div>
-    <div>
+    <div class="div">
         <label>Senha:</label>
         <input asp-for="Senha" type="password" required />
     </div>
-    <div>
-        <button type="submit">Novo Cadastrado</button>
+    <div class="div">
+        <button type="submit" class="btt">Novo Cadastrado</button>
 
     </div>
 
