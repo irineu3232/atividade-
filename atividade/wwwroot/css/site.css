@@ -19,4 +19,12 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family:sans-serif;
+  font-style:italic;
+}
+
+p
+{
+    text-align: center;
+    font-size:1.5rem;
 }
